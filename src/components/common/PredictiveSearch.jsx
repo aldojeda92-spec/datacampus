@@ -102,7 +102,7 @@ export default function PredictiveSearch({ placeholder = "Busca carreras (ej: Me
     <div ref={containerRef} className={`relative w-full ${className}`}>
       <form onSubmit={handleSearchSubmit} className="relative flex items-center">
         <div className="absolute inset-y-0 left-0 pl-4 sm:pl-5 flex items-center pointer-events-none">
-          <Search className="h-5 w-5 sm:h-6 sm:w-6 text-campus-500" />
+          <Search className="h-5 w-5 sm:h-6 sm:w-6 text-[#008F7A]" />
         </div>
         
         <input
@@ -111,7 +111,7 @@ export default function PredictiveSearch({ placeholder = "Busca carreras (ej: Me
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => setIsOpen(true)}
           placeholder={placeholder}
-          className="w-full pl-12 sm:pl-14 pr-24 sm:pr-32 py-4 sm:py-4.5 bg-white text-slate-800 placeholder-slate-400 font-medium rounded-2xl border-2 border-slate-200 focus:border-campus-500 focus:outline-none shadow-card hover:border-slate-300 transition-all text-sm sm:text-base"
+          className="w-full pl-12 sm:pl-14 pr-24 sm:pr-32 py-4 sm:py-4.5 bg-white text-[#0A1F33] placeholder-slate-400 font-medium rounded-xl border-2 border-[#D6E2EF] focus:border-[#008F7A] focus:outline-none shadow-soft hover:border-slate-300 transition-all text-sm sm:text-base font-sans"
         />
 
         {searchTerm && (
@@ -126,7 +126,7 @@ export default function PredictiveSearch({ placeholder = "Busca carreras (ej: Me
 
         <button
           type="submit"
-          className="absolute right-2 sm:right-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-campus-600 hover:bg-campus-700 active:scale-95 text-white font-bold rounded-xl shadow-md transition-all text-xs sm:text-sm flex items-center gap-1.5"
+          className="absolute right-2 sm:right-2.5 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#008F7A] hover:bg-[#087360] active:scale-95 text-white font-bold rounded-lg shadow-sm transition-all text-xs sm:text-sm flex items-center gap-1.5 font-display"
         >
           <span>Buscar</span>
           <ArrowRight className="w-4 h-4 hidden sm:inline" />
@@ -135,7 +135,7 @@ export default function PredictiveSearch({ placeholder = "Busca carreras (ej: Me
 
       {/* Autopredictive Dropdown results */}
       {isOpen && (
-        <div className="absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-floating border border-slate-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+        <div className="absolute left-0 right-0 top-full mt-2 bg-white rounded-xl shadow-card border border-[#D6E2EF] overflow-hidden z-50 animate-in fade-in slide-in-from-top-1 duration-150">
           {searchTerm.trim().length > 0 ? (
             hasResults ? (
               <div className="max-h-[70vh] overflow-y-auto divide-y divide-slate-100">

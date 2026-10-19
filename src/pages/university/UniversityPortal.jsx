@@ -25,6 +25,7 @@ import {
   LogIn
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import BrandLogo from '../../components/common/BrandLogo';
 import { 
   getUniversities, 
   saveUniversity, 
@@ -231,18 +232,18 @@ export default function UniversityPortal() {
   ========================================================= */
   if (!currentUser || (!isUniversity && !isAdmin)) {
     return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 sm:p-6 py-12">
-        <div className="w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-slate-800 space-y-6">
-          <div className="text-center space-y-2">
-            <div className="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mx-auto shadow-card">
-              <Building2 className="w-8 h-8" />
+      <div className="min-h-screen bg-[#0A1F33] flex items-center justify-center p-4 sm:p-6 py-12">
+        <div className="w-full max-w-md bg-white rounded-xl p-8 sm:p-10 shadow-card border border-[#D6E2EF] space-y-6">
+          <div className="text-center space-y-3 pb-2 border-b border-slate-100">
+            <BrandLogo size="md" showDescriptor={true} showEcosystem={true} className="items-center" />
+            <div className="pt-2">
+              <h1 className="text-lg font-black text-[#0A1F33] tracking-tight font-display">
+                Portal de Universidades
+              </h1>
+              <p className="text-xs text-slate-500">
+                Acceso para coordinadores de facultades e instituciones en convenio
+              </p>
             </div>
-            <h1 className="text-2xl font-black text-slate-900 tracking-tight">
-              Portal de Universidades
-            </h1>
-            <p className="text-xs text-slate-500">
-              Acceso exclusivo para encargados de facultades y universidades en convenio
-            </p>
           </div>
 
           {loginError && (

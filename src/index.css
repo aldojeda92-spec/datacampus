@@ -2,9 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================================
+   DATABRAND / DATACAMPUS - DESIGN TOKENS (Brandbook V4.1)
+   ======================================================== */
+:root {
+  --brand-data-navy: #0A1F33;
+  --brand-car-accent: #247BEB;
+  --brand-campus-accent: #008F7A;
+  --ui-car-text: #125EC0;
+  --ui-campus-text: #087360;
+  --ui-text-primary: #0A1F33;
+  --ui-text-secondary: #3A3A3C;
+  --ui-surface: #FFFFFF;
+  --ui-surface-muted: #F2F6FB;
+  --ui-border: #D6E2EF;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --font-display: 'Montserrat', sans-serif;
+  --font-ui: 'Inter', sans-serif;
+}
+
 @layer base {
   body {
-    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #0A1F33;
+    background-color: #F8FAFC;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
+    color: #0A1F33;
   }
 }
 
@@ -14,20 +46,20 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #F2F6FB;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #D6E2EF;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #008F7A;
 }
 
-/* Animation utilities */
+/* Subtle pulse animation */
 @keyframes pulseSubtle {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.92; transform: scale(1.02); }
+  50% { opacity: 0.94; transform: scale(1.015); }
 }
 
 .animate-pulse-subtle {

@@ -40,6 +40,7 @@ import {
 } from 'lucide-react';
 import Papa from 'papaparse';
 import { useAuth, MASTER_ADMIN } from '../../context/AuthContext';
+import BrandLogo from '../../components/common/BrandLogo';
 import { 
   getUniversities, 
   saveUniversity, 
@@ -733,20 +734,21 @@ export default function AdminDashboard() {
     <div className="min-h-screen bg-slate-100 flex flex-col pb-24">
       
       {/* Admin Top Navbar */}
-      <header className="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-30">
+      <header className="bg-[#0A1F33] text-white border-b border-slate-800 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-campus-500 flex items-center justify-center font-black">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <div>
+          <div className="flex items-center gap-4">
+            <Link to="/" className="inline-block" title="Ir a la web pública">
+              <BrandLogo variant="negative" size="sm" showDescriptor={true} />
+            </Link>
+            <div className="h-8 w-px bg-slate-700 hidden sm:block" />
+            <div className="hidden sm:block">
               <div className="flex items-center gap-2">
-                <span className="font-extrabold text-base tracking-tight">DATACAMPUS ADMIN</span>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-400 text-slate-950 uppercase">
-                  Poder Total Master
+                <span className="font-extrabold text-xs tracking-wider text-slate-300 uppercase font-display">Panel de Control</span>
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-400 text-slate-950 uppercase font-display">
+                  Poder Total
                 </span>
               </div>
-              <p className="text-xs text-slate-400">
+              <p className="text-[11px] text-slate-400 font-mono">
                 {currentUser?.displayName || currentUser?.email}
               </p>
             </div>

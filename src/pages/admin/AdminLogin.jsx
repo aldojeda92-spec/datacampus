@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
+import BrandLogo from '../../components/common/BrandLogo';
+
 export default function AdminLogin() {
   const { login, loading } = useAuth();
   const [email, setEmail] = useState('');
@@ -24,24 +26,24 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 sm:p-6">
+    <div className="min-h-screen bg-[#0A1F33] flex items-center justify-center p-4 sm:p-6">
       
-      {/* Background glow */}
-      <div className="absolute w-96 h-96 rounded-full bg-campus-600/20 blur-3xl pointer-events-none" />
+      {/* Background glow with brand emerald */}
+      <div className="absolute w-96 h-96 rounded-full bg-[#008F7A]/20 blur-3xl pointer-events-none" />
 
-      <div className="relative w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-slate-800 space-y-6">
+      <div className="relative w-full max-w-md bg-white rounded-xl p-8 sm:p-10 shadow-card border border-[#D6E2EF] space-y-6">
         
-        {/* Header */}
-        <div className="text-center space-y-2">
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-campus-600 to-indigo-600 text-white flex items-center justify-center mx-auto shadow-card">
-            <ShieldCheck className="w-8 h-8" />
+        {/* Header with official BrandLogo */}
+        <div className="text-center space-y-3 pb-2 border-b border-slate-100">
+          <BrandLogo size="md" showDescriptor={true} showEcosystem={true} className="items-center" />
+          <div className="pt-2">
+            <h1 className="text-lg font-black text-[#0A1F33] tracking-tight font-display">
+              Panel Administrador
+            </h1>
+            <p className="text-xs text-slate-500">
+              Acceso exclusivo para administradores autorizados
+            </p>
           </div>
-          <h1 className="text-2xl font-black text-slate-900 tracking-tight">
-            Panel Administrador
-          </h1>
-          <p className="text-xs text-slate-500">
-            DATACAMPUS • Acceso exclusivo para administradores
-          </p>
         </div>
 
         {error && (
