@@ -4,11 +4,9 @@ import {
   Lock, 
   Mail, 
   LogIn, 
-  Sparkles, 
-  AlertCircle,
-  GraduationCap
+  AlertCircle 
 } from 'lucide-react';
-import { useAuth, MASTER_ADMIN } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 
 export default function AdminLogin() {
   const { login, loading } = useAuth();
@@ -23,11 +21,6 @@ export default function AdminLogin() {
     if (!res.success) {
       setError(res.error || 'Credenciales incorrectas');
     }
-  };
-
-  const handleAutofillMaster = () => {
-    setEmail('aldojeda92@gmail.com');
-    setPassword('Aldo3492018*');
   };
 
   return (
@@ -69,9 +62,10 @@ export default function AdminLogin() {
               <input
                 type="email"
                 required
+                autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="aldojeda92@gmail.com"
+                placeholder="admin@datacampus.com.py"
                 className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:border-campus-500 focus:outline-none"
               />
             </div>
@@ -86,6 +80,7 @@ export default function AdminLogin() {
               <input
                 type="password"
                 required
+                autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
@@ -110,23 +105,11 @@ export default function AdminLogin() {
           </button>
         </form>
 
-        {/* Master quick credentials */}
-        <div className="pt-4 border-t border-slate-100 space-y-2">
-          <div className="p-3.5 rounded-2xl bg-campus-50 border border-campus-100 space-y-2 text-center">
-            <span className="text-[11px] font-bold text-campus-800 flex items-center justify-center gap-1">
-              <Sparkles className="w-3.5 h-3.5 text-campus-600" />
-              Socio Fundador con Poder Total:
-            </span>
-            <div className="flex justify-center">
-              <button
-                type="button"
-                onClick={handleAutofillMaster}
-                className="px-4 py-2 rounded-xl bg-white border border-campus-200 text-xs font-bold text-campus-900 hover:bg-campus-100 transition-colors shadow-sm"
-              >
-                👑 Autocompletar Master (Aldo Ojeda)
-              </button>
-            </div>
-          </div>
+        {/* Secure access note */}
+        <div className="pt-4 border-t border-slate-100 text-center">
+          <p className="text-[11px] text-slate-400 font-medium">
+            🔒 Área restringida con autenticación segura y cifrada.
+          </p>
         </div>
 
       </div>

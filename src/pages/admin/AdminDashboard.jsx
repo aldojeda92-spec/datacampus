@@ -1183,12 +1183,12 @@ export default function AdminDashboard() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-extrabold text-sm">Aldo Ojeda</span>
+                    <span className="font-extrabold text-sm">{currentUser?.displayName || 'Socio Principal'}</span>
                     <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-400 text-slate-950 uppercase">
                       Cuenta Master Fundador
                     </span>
                   </div>
-                  <p className="text-xs text-slate-300 font-mono">aldojeda92@gmail.com</p>
+                  <p className="text-xs text-slate-300 font-mono">{currentUser?.email || 'admin@datacampus.com.py'}</p>
                 </div>
               </div>
               <div className="text-xs text-slate-400 text-right">
